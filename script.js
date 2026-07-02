@@ -50,14 +50,22 @@ let isPlaying = false;
 let repeatMode = 0;
 
 // Restore last song
-const savedSong = localStorage.getItem("currentSong");
+const savedSong = Number(localStorage.getItem("currentSong"));
 
-if (savedSong !== null) {
-    currentSong = Number(savedSong);
+if (!isNaN(savedSong) && savedSong >= 0 && savedSong < songs.length) {
+    currentSong = savedSong;
+} else {
+    currentSong = 0;
 }
 
 // ---------- Load Song ----------
 function loadSong(index) {
+
+    if (index < 0 || index >= songs.length) {
+        index = 0;
+    }
+
+    currentSong = index;
 
     title.textContent = songs[index].title;
     artist.textContent = songs[index].artist;
@@ -65,8 +73,8 @@ function loadSong(index) {
     audio.src = songs[index].audio;
 
     localStorage.setItem("currentSong", index);
-    updatePlaylist();
 
+    updatePlaylist();
 }
 
 // ---------- Play ----------
