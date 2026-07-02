@@ -1,4 +1,4 @@
-# MyMusicPlayer
+# Auralis
 
 A simple offline music player built using HTML, CSS, and JavaScript.
 
