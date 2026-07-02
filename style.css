@@ -20,7 +20,7 @@
 
     --card-color:#1e1e1e;
 
-    --primary:#FF5722;
+    --primary:#FF2595;
 
     --text:#ffffff;
 
@@ -120,5 +120,128 @@ body{
     color:var(--subtext);
 
     font-size:15px;
+
+}
+/* ===========================
+   Progress Section
+=========================== */
+
+.progress-container{
+
+    width:100%;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+.progress-container span{
+
+    width:45px;
+
+    text-align:center;
+
+    font-size:14px;
+
+    color:var(--subtext);
+
+}
+
+#progress{
+
+    flex:1;
+
+    cursor:pointer;
+
+}
+/* Progress Slider */
+
+#progress{
+
+    appearance:none;
+
+    height:6px;
+
+    border-radius:10px;
+
+    background:#3a3a3a;
+
+}
+
+#progress::-webkit-slider-thumb{
+
+    appearance:none;
+
+    width:18px;
+
+    height:18px;
+
+    border-radius:50%;
+
+    background:var(--primary);
+
+    cursor:pointer;
+
+}
+/* ===========================
+   Controls
+=========================== */
+
+.controls{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+.controls button{
+
+    width:55px;
+
+    height:55px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#2d2d2d;
+
+    color:white;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+.controls button:hover{
+
+    background:var(--primary);
+
+    transform:scale(1.08);
+
+}
+#play{
+
+    width:70px;
+
+    height:70px;
+
+    font-size:30px;
+
+    background:var(--primary);
+
+}
+.controls button:active{
+
+    transform:scale(1.08);
 
 }
