@@ -1,0 +1,55 @@
+/* ===================================
+   My Music Player
+   Version 0.2.0
+   Author: Ashutosh Shelar
+=================================== */
+
+/* Reset */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* Root Variables */
+
+:root{
+
+    --bg-color:#121212;
+
+    --card-color:#1e1e1e;
+
+    --primary:#FF5722;
+
+    --text:#ffffff;
+
+    --subtext:#b3b3b3;
+
+    --shadow:0 10px 25px rgba(0,0,0,.35);
+
+    --radius:20px;
+
+}
+
+/* Body */
+
+body{
+
+    background:var(--bg-color);
+
+    color:var(--text);
+
+    font-family:Arial, Helvetica, sans-serif;
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:20px;
+
+}
