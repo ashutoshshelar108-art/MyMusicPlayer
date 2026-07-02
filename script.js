@@ -28,6 +28,9 @@ const artist = document.getElementById("artist");
 const playBtn = document.getElementById("play");
 const nextBtn = document.getElementById("next");
 const prevBtn = document.getElementById("prev");
+const progress = document.getElementById("progress");
+const currentTime = document.getElementById("current-time");
+const duration = document.getElementById("duration");
 
 let currentSong = 0;
 let isPlaying = false;
@@ -46,7 +49,17 @@ function playSong() {
     isPlaying = true;
     playBtn.textContent = "⏸";
 }
+function formatTime(seconds) {
 
+    if (isNaN(seconds)) return "0:00";
+
+    const minutes = Math.floor(seconds / 60);
+
+    const secs = Math.floor(seconds % 60);
+
+    return `${minutes}:${secs.toString().padStart(2, "0")}`;
+
+}
 // Play / Pause
 playBtn.addEventListener("click", () => {
   if (isPlaying) {
@@ -78,4 +91,37 @@ prevBtn.addEventListener("click", () => {
 
     loadSong(currentSong);
     playSong();
+});
+audio.addEventListener("timeupdate", () => {
+
+    progress.value =
+        (audio.currentTime / audio.duration) * 100;
+
+    currentTime.textContent =
+        formatTime(audio.currentTime);
+
+    duration.textContent =
+        formatTime(audio.duration);
+
+});
+progress.addEventListener("input", () => {
+
+    const newTime =
+        (progress.value / 100) * audio.duration;
+
+    audio.currentTime = newTime;
+
+});
+audio.addEventListener("ended", () => {
+
+    currentSong++;
+
+    if (currentSong >= songs.length) {
+        currentSong = 0;
+    }
+
+    loadSong(currentSong);
+
+    playSong();
+
 });
