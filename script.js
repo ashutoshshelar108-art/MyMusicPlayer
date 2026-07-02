@@ -41,9 +41,16 @@ function loadSong(index) {
   artist.textContent = songs[index].artist;
   cover.src = songs[index].cover;
   audio.src = songs[index].audio;
+  localStorage.setItem("currentSong",index);
+}
+const savedSong = localStorage.getItem("currentSong");
+
+if (savedSong !== null) {
+    currentSong = Number(savedSong);
 }
 
 loadSong(currentSong);
+
 function playSong() {
     audio.play();
     isPlaying = true;
@@ -125,3 +132,21 @@ audio.addEventListener("ended", () => {
     playSong();
 
 });
+const volume = document.getElementById("volume");
+volume.addEventListener("input", () => {
+
+    audio.volume = volume.value / 100;
+    localStorage.setItem("volume",volume.value);
+
+});
+loadSong(currentSong);
+
+const savedVolume = localStorage.getItem("volume");
+
+if (savedVolume !== null) {
+
+    volume.value = savedVolume;
+
+    audio.volume = savedVolume / 100;
+
+}
