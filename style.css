@@ -20,7 +20,7 @@
 
     --card-color:#1e1e1e;
 
-    --primary:#FF2595;
+    --primary:#4F9800;;
 
     --text:#ffffff;
 
@@ -36,7 +36,11 @@
 
 body{
 
-    background:var(--bg-color);
+    background:linear-gradient(
+    180deg,
+    #181818,
+    #0d0d0d
+);
 
     color:var(--text);
 
@@ -86,9 +90,11 @@ body{
 
 .cover{
 
-    width:220px;
+    width:100%;
 
-    height:220px;
+    max-width:220px;
+
+    aspect-ratio:1;
 
     object-fit:cover;
 
@@ -243,5 +249,123 @@ body{
 .controls button:active{
 
     transform:scale(1.08);
+
+}
+/* ===========================
+   Volume Section
+=========================== */
+
+.volume{
+
+    width:100%;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+.volume label{
+
+    font-size:22px;
+
+}
+
+#volume{
+
+    flex:1;
+
+    appearance:none;
+
+    height:6px;
+
+    background:#3a3a3a;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+}
+#volume::-webkit-slider-thumb{
+
+    appearance:none;
+
+    width:18px;
+
+    height:18px;
+
+    border-radius:50%;
+
+    background:var(--primary);
+
+    cursor:pointer;
+
+}
+button:focus{
+
+    outline:3px solid var(--primary);
+
+    outline-offset:3px;
+
+}
+.cover{
+
+    width:100%;
+
+    max-width:220px;
+
+    aspect-ratio:1;
+
+    object-fit:cover;
+
+    border-radius:18px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.4);
+
+}
+/* ===========================
+   Responsive Design
+=========================== */
+
+@media (max-width:480px){
+
+    .player{
+
+        padding:20px;
+
+    }
+
+    #play{
+
+        width:65px;
+
+        height:65px;
+
+    }
+
+    .controls{
+
+        gap:15px;
+
+    }
+
+}
+.song-info h2{
+
+    font-size:24px;
+
+    font-weight:700;
+
+}
+
+.song-info p{
+
+    color:var(--subtext);
+
+    font-size:15px;
+
+    letter-spacing:.5px;
 
 }
