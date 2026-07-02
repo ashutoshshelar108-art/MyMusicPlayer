@@ -53,3 +53,72 @@ body{
     padding:20px;
 
 }
+/* ===========================
+   Player Container
+=========================== */
+
+.player{
+
+    width:100%;
+
+    max-width:380px;
+
+    background:var(--card-color:#ff2595;);
+
+    border-radius:var(--radius);
+
+    padding:25px;
+
+    box-shadow:var(--shadow);
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+/* ===========================
+   Album Cover
+=========================== */
+
+.cover{
+
+    width:220px;
+
+    height:220px;
+
+    object-fit:cover;
+
+    border-radius:18px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.4);
+
+}
+/* ===========================
+   Song Information
+=========================== */
+
+.song-info{
+
+    text-align:center;
+
+}
+
+.song-info h2{
+
+    font-size:24px;
+
+    margin-bottom:8px;
+
+}
+
+.song-info p{
+
+    color:var(--subtext);
+
+    font-size:15px;
+
+}
