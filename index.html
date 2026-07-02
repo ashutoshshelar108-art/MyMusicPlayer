@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+    <title>My Music Player</title>
+    <link
+        rel="stylesheet"
+        href="style.css">
+</head>
+<body>
+    <main class="player">
+        <!-- Album Cover -->
+        <img
+            src="assets/images/cover.jpg"
+            alt="Album Cover"
+            class="cover"
+            id="cover">
+        <!-- Song Information -->
+        <section class="song-info">
+            <h2 id="title">
+                Song Title
+            </h2>
+            <p id="artist">
+                Artist Name
+            </p>
+        </section>
+        <!-- Audio -->
+        <audio
+            id="audio">
+            <source
+                src="assets/songs/song1.mp3"
+                type="audio/mpeg">
+        </audio>
+        <!-- Progress -->
+        <section class="progress-container">
+            <span id="current-time">
+                0:00
+            </span>
+            <input
+                type="range"
+                id="progress"
+                value="0"
+                min="0"
+                max="100">
+            <span id="duration">
+                0:00
+            </span>
+        </section>
+        <!-- Controls -->
+        <section class="controls">
+            <button id="prev">
+                ⏮
+            </button>
+            <button id="play">
+                ▶
+            </button>
+            <button id="next">
+                ⏭
+            </button>
+        </section>
+        <!-- Volume -->
+        <section class="volume">
+            <label for="volume">
+                🔊
+            </label>
+            <input
+                type="range"
+                id="volume"
+                value="100"
+                min="0"
+                max="100">
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
