@@ -53,18 +53,24 @@
         <!-- Controls -->
         <section class="controls">
           <button id="shuffle">
-               🔀
-             </button>
-            <button id="prev">
-                ⏮
-            </button>
-            <button id="play">
-                ▶
-            </button>
-            <button id="next">
-                ⏭
-            </button>
-            <button id="repeat">⏹</button>
+    <i data-lucide="shuffle"></i>
+</button>
+
+<button id="prev">
+    <i data-lucide="skip-back"></i>
+</button>
+
+<button id="play">
+    <i data-lucide="play"></i>
+</button>
+
+<button id="next">
+    <i data-lucide="skip-forward"></i>
+</button>
+
+<button id="repeat">
+    <i data-lucide="repeat"></i>
+</button>
         </section>
         <!-- Volume -->
         <section class="volume">
@@ -84,6 +90,11 @@
             </ul>
 </section>
     </main>
+    <script src="https://unpkg.com/lucide@latest"></script>
     <script src="script.js"></script>
+   <script>
+             lucide.createIcons();
+  </script>
+    
 </body>
 </html>

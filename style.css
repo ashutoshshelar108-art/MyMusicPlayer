@@ -433,3 +433,14 @@ button:focus-visible{
         font-size:18px;
     }
 }
+-------------biggerfonts----------
+button svg{
+    width:22px;
+    height:22px;
+    stroke-width:2;
+}
+
+#play svg{
+    width:28px;
+    height:28px;
+}

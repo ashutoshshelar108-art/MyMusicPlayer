@@ -100,7 +100,8 @@ function playSong() {
 
     audio.play();
     isPlaying = true;
-    playBtn.textContent = "⏸";
+    playBtn.innerHTML = '<i data-lucide="pause"></i>';
+    lucide.createIcons();
 
 }
 
@@ -109,7 +110,8 @@ function pauseSong() {
 
     audio.pause();
     isPlaying = false;
-    playBtn.textContent = "▶";
+   playBtn.innerHTML = '<i data-lucide="play"></i>';
+   lucide.createIcons();
 
 }
 
@@ -193,6 +195,13 @@ function updateProgressFill() {
 loadSong(currentSong);
 createPlaylist();
 updatePlaylist();
+playBtn.innerHTML = '<i data-lucide="play"></i>';
+repeatBtn.innerHTML = '<i data-lucide="repeat"></i>';
+shuffleBtn.innerHTML = '<i data-lucide="shuffle"></i>';
+prevBtn.innerHTML = '<i data-lucide="skip-back"></i>';
+nextBtn.innerHTML = '<i data-lucide="skip-forward"></i>';
+
+lucide.createIcons();
 
 // Restore volume
 const savedVolume = localStorage.getItem("volume");
@@ -351,11 +360,12 @@ repeatBtn.addEventListener("click", () => {
     if (repeatMode > 2) {
         repeatMode = 0;
     }
-    if (repeatMode === 0) {
-        repeatBtn.textContent = "⏹";
-    } else if (repeatMode === 1) {
-        repeatBtn.textContent = "🔁";
-    } else {
-        repeatBtn.textContent = "🔂";
-    }
+    if(repeatMode===0){
+       repeatBtn.innerHTML='<i data-lucide="repeat"></i>';
+          }else if(repeatMode===1){
+        repeatBtn.innerHTML='<i data-lucide="repeat"></i>';
+          }else{
+           repeatBtn.innerHTML='<i data-lucide="repeat-1"></i>';
+           }
+        lucide.createIcons();
 });
