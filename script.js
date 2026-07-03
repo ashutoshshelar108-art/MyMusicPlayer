@@ -18,11 +18,29 @@ const songs = [
         cover: "assets/image/cover2.jpg"
     },
     {
-        title: "Song Three",
-        artist: "Artist Three",
-        audio: "assets/songs/song3.mp3",
-        cover: "assets/image/cover3.jpg"
-    }
+       title: "Song Three",
+       artist: "Artist Three",
+       audio: "assets/songs/song3.mp3",
+       cover: "assets/image/cover3.jpg"
+      },
+      {
+       title: "Song Four",
+       artist: "Artist Four",
+       audio: "assets/songs/song4.mp3",
+       cover: "assets/image/cover4.jpg"
+       }, 
+      {
+       title: "Song Five",
+       artist: "Artist Five",
+       audio: "assets/songs/song5.mp3",
+       cover: "assets/image/cover5.jpg"
+      }, 
+       {
+       title: "Song six",
+        artist: "Artist Six",
+       audio: "assets/songs/song6.mp3",
+       cover: "assets/image/cover6.jpg"
+       },
 ];
 
 // ---------- DOM Elements ----------
