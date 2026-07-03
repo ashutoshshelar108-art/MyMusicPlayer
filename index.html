@@ -11,14 +11,85 @@
         href="style.css">
 </head>
 <body>
+      <div class="sidebar" id="sidebar">
+    <h2>Auralis</h2>
+    <ul>
+        <li data-page="home" class="active">
+            <i data-lucide="house"></i>
+            Home
+        </li>
+        <li data-page="library">
+            <i data-lucide="library"></i>
+            Library
+        </li>
+        <li data-page="favorites">
+            <i data-lucide="heart"></i>
+            Favorites
+        </li>
+        <li data-page="recent">
+            <i data-lucide="clock-3"></i>
+            Recently Played
+        </li>
+        <li data-page="settings">
+            <i data-lucide="settings"></i>
+            Settings
+        </li>
+    </ul>
+
+</div>
+<div id="overlay" class="overlay"></div>
     <main class="player">
-        <!-- Album Cover -->
-        <img
-            src=" {
-           src="assets/image/cover1.jpg"
-            alt="assets/image/cover0.jpg"
-            class="cover"
-            id="cover">
+       <!-- ==========================
+     Navigation Bar
+========================== -->
+<header class="navbar">
+    <button id="menuBtn" class="nav-icon">
+        <i data-lucide="menu"></i>
+    </button>
+    <div class="app-logo">
+        <i data-lucide="music-4"></i>
+        <span>Auralis</span>
+    </div>
+    <button id="accountBtn" class="nav-icon">
+        <i data-lucide="circle-user-round"></i>
+    </button>
+</header>
+<!-- Search -->
+<div class="search-container">
+    <i data-lucide="search"></i>
+    <input
+        type="text"
+        id="search"
+        placeholder="Search songs...">
+</div>
+        <!-- ==========================
+             Page: Home (Now Playing)
+        ========================== -->
+        <div class="page active" id="page-home" data-page="home">
+
+        <!-- Empty state: shown until a folder has been picked -->
+        <div class="empty-library" id="emptyLibrary">
+            <i data-lucide="folder-open"></i>
+            <h3>No media yet</h3>
+            <p>Pick a folder on your phone and Auralis will remember it.</p>
+            <button id="openFolderBtn" class="primary-btn">Open Folder</button>
+        </div>
+
+        <!-- Player: hidden until something is loaded -->
+        <div class="now-playing" id="nowPlaying">
+
+        <!-- Album Cover / Video Surface -->
+        <div class="media-wrapper">
+            <img
+                src="assets/image/cover1.jpg"
+                alt="Album cover"
+                class="cover"
+                id="cover">
+            <video
+                id="media"
+                class="cover video-surface"
+                playsinline></video>
+        </div>
         <!-- Song Information -->
         <section class="song-info">
             <h2 id="title">
@@ -27,14 +98,10 @@
             <p id="artist">
                 Artist Name
             </p>
+            <button id="favoriteBtn" class="fav-btn" title="Add to Favorites">
+                <i data-lucide="heart"></i>
+            </button>
         </section>
-        <!-- Audio -->
-        <audio
-            id="audio">
-            <source
-                src="assets/songs/song1.mp3"
-                type="audio/mpeg">
-        </audio>
         <!-- Progress -->
         <section class="progress-container">
             <span id="current-time">
@@ -85,11 +152,64 @@
                 max="100">
                </section>
                <section class="playlist">
-              <h3>Playlist</h3>
+              <h3>Playing From</h3>
               <ul id="playlist">
             </ul>
 </section>
-    </main>
+</div> <!-- /now-playing -->
+</div> <!-- /page-home -->
+<!-- ==========================
+     Page: Library
+========================== -->
+<div class="page" id="page-library" data-page="library">
+    <div class="page-header">
+        <h2 class="page-title">Library</h2>
+        <button id="openFolderBtnLibrary" class="icon-btn" title="Open Folder">
+            <i data-lucide="folder-open"></i>
+        </button>
+    </div>
+    <ul id="library-list" class="page-list"></ul>
+    <p class="empty-state" id="library-empty">No folder open yet.</p>
+</div>
+
+<!-- ==========================
+     Page: Favorites
+========================== -->
+<div class="page" id="page-favorites" data-page="favorites">
+    <h2 class="page-title">Favorites</h2>
+    <ul id="favorites-list" class="page-list"></ul>
+    <p class="empty-state" id="favorites-empty">No favorites yet. Tap the heart on a song to save it here.</p>
+</div>
+
+<!-- ==========================
+     Page: Recently Played
+========================== -->
+<div class="page" id="page-recent" data-page="recent">
+    <div class="page-header">
+        <h2 class="page-title">Recently Played</h2>
+        <button id="clearRecentBtn" class="icon-btn" title="Clear History">
+            <i data-lucide="trash-2"></i>
+        </button>
+    </div>
+    <ul id="recent-list" class="page-list"></ul>
+    <p class="empty-state" id="recent-empty">Nothing played yet.</p>
+</div>
+
+<!-- ==========================
+     Page: Settings
+========================== -->
+<div class="page" id="page-settings" data-page="settings">
+    <h2 class="page-title">Settings</h2>
+    <div class="settings-row">
+        <span>Theme</span>
+        <span class="settings-value">Dark</span>
+    </div>
+    <div class="settings-row">
+        <span>Version</span>
+        <span class="settings-value">0.8.0</span>
+    </div>
+</div>
+</main>
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="script.js"></script>
    <script>
